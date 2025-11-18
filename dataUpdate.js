@@ -4,10 +4,6 @@ function dataUpdate() {
     let lastTrialMinus1 = jsPsych.data.get().last(2).values()[0]
     let lastTrial = jsPsych.data.get().last(1).values()[0]
 
-    // 添加被试编号、实验时间和设备信息
-    lastTrial.subject_id = variables.subject_id;  // 假设 subject_id 已经在变量中定义
-    lastTrial.session_number = variables.session_number;  // 会话号
-    lastTrial.device_info = navigator.userAgent;  // 设备信息，通过浏览器的 userAgent 获取
 
     if (typeof (lastTrial.target) != "undefined") {
         if (lastTrialMinus1.correct === false) {
